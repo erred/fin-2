@@ -6,4 +6,4 @@ validate:
 
 .PHONY: oci
 oci:
-	KO_DOCKER_REPO=ghcr.io/seankhliao/fin ko build --bare
+	KO_DOCKER_REPO=ghcr.io/seankhliao/fin ko build --bare --image-label 'org.opencontainers.image.source=https://github.com/seankhliao/fin'
