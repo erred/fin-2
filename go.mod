@@ -6,7 +6,7 @@ require (
 	cuelang.org/go v0.4.3
 	github.com/google/subcommands v1.2.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.41.0-rc.2
-	go.seankhliao.com/svcrunner/v2 v2.0.0-20230408110612-f62017ce32be
+	go.seankhliao.com/svcrunner/v2 v2.0.0-20230410162457-a48dd6ac2825
 	go.seankhliao.com/webstyle v0.5.6
 )
 
