@@ -7,7 +7,7 @@ require (
 	github.com/google/subcommands v1.2.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.42.0
 	go.seankhliao.com/svcrunner/v2 v2.0.0-20230624155321-19bdf2839035
-	go.seankhliao.com/webstyle v0.5.6
+	go.seankhliao.com/webstyle v0.0.0-20230625120550-9571efcb99d4
 )
 
 require (
