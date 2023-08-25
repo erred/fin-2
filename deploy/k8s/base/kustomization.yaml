@@ -12,5 +12,5 @@ labels:
 namespace: fin
 
 resources:
-  - deployment.k8s.yaml
+  - statefulset.k8s.yaml
   - service.k8s.yaml

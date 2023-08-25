@@ -5,6 +5,18 @@ buildMetadata:
   - managedByLabel
   - originAnnotations
 
+patches:
+  - patch: |
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: fin
+        annotations:
+          tailscale.com/hostname: fin-ihwa
+      spec:
+        type: LoadBalancer
+        loadBalancerClass: tailscale
+
 resources:
   - ../base
   - namespace.k8s.yaml

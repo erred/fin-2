@@ -15,10 +15,9 @@ spec:
     spec:
       enableServiceLinks: false
       containers:
-        - name: auth
+        - name: fin
           image: ghcr.io/seankhliao/fin
           args:
-            - serve
             - -data.dir=/data
           ports:
             - name: http
