@@ -20,7 +20,7 @@ func main() {
 	conf := &Config{}
 
 	// flags
-	fset := flag.NewFlagSet("ghdefaults", flag.ExitOnError)
+	fset := flag.NewFlagSet("fin", flag.ExitOnError)
 	conf.SetFlags(fset)
 	if len(os.Args) < 2 {
 		fmt.Fprintln(os.Stderr, "missing subcommand view|submit|serve")
