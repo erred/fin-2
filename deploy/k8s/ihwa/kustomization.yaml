@@ -16,6 +16,29 @@ patches:
       spec:
         type: LoadBalancer
         loadBalancerClass: tailscale
+  - patch: |
+      apiVersion: apps/v1
+      kind: StatefulSet
+      metadata:
+        name: fin
+      spec:
+        template:
+          spec:
+            containers:
+              - name: fin
+                env:
+                  - name: OTEL_SERVICE_NAME
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: metadata.labels['app.kubernetes.io/name']
+                  - name: POD_UID
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: metadata.uid
+                  - name: OTEL_RESOURCE_ATTRIBUTES
+                    value: k8s.pod.uid=$(POD_UID),k8s.cluster.name=ihwa,k8s.container.name=fin
+                  - name: OTEL_EXPORTER_OTLP_ENDPOINT
+                    value: http://ingest.otelcol.svc:4317
 
 resources:
   - ../base
