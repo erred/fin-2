@@ -5,7 +5,7 @@ go 1.21.0
 require (
 	cuelang.org/go v0.4.3
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.42.0
-	go.seankhliao.com/svcrunner/v3 v3.0.0-20230826105210-e777b25ddbb9
+	go.seankhliao.com/svcrunner/v3 v3.0.0-20230826121122-52a97a8823fa
 	go.seankhliao.com/webstyle v0.0.0-20230625120550-9571efcb99d4
 )
 

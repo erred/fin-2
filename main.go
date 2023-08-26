@@ -28,9 +28,19 @@ func main() {
 		Start: func(ctx context.Context, o *observability.O, m *http.ServeMux) (func(), error) {
 			switch conf.mode {
 			case "view":
-				return nil, View(ctx, o, conf)
+				err := View(ctx, o, conf)
+				if err != nil {
+					o.Err(ctx, "view", err)
+					os.Exit(1)
+				}
+				os.Exit(0)
 			case "submit":
-				return nil, Submit(ctx, o, conf)
+				err := Submit(ctx, o, conf)
+				if err != nil {
+					o.Err(ctx, "submit", err)
+					os.Exit(1)
+				}
+				os.Exit(0)
 			case "serve":
 				app := New(ctx, o, conf)
 				app.Register(m)
